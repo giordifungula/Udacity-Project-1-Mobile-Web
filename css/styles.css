@@ -294,10 +294,10 @@ img {
     .inside #map-container {
         width: 100%;
         max-width: 100%;
-        height: 200px;
+        height: 400px;
     }
     #restaurant-container, #reviews-container {
-        width: 0%;
+        width: 100%;
     }
     
      #map-container {
@@ -305,6 +305,9 @@ img {
     }
     .inside #map-container {
      
+    }
+    select {
+        width: 100%;
     }
      
 }
@@ -324,6 +327,11 @@ img {
         top: 0;
     }
     
+}
+@media(min-width: 950px) {
+    #restaurant-container, #reviews-container {
+        width: 25%;
+    }
 }
 
 @media (min-wo)
