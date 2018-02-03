@@ -4,8 +4,8 @@ var map;
 /**
  * Initialize Google map, called from HTML.
  */
-const window.initMap = () => {
- const fetchRestaurantFromURL((error, restaurant) => {
+ window.initMap = () => {
+  fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
       console.error(error);
     } else {
@@ -33,7 +33,7 @@ const fetchRestaurantFromURL = (callback) => {
     error = 'No restaurant id in URL'
     callback(error, null);
   } else {
-    const DBHelper.fetchRestaurantById(id, (error, restaurant) => {
+    DBHelper.fetchRestaurantById(id, (error, restaurant) => {
       self.restaurant = restaurant;
       if (!restaurant) {
         console.error(error);
@@ -57,7 +57,7 @@ const fillRestaurantHTML = (restaurant = self.restaurant) => {
 
   const image = document.getElementById('restaurant-img');
     image.alt = 'Restuarant Image of ' + restaurant.name;
-  image.className = 'restaurant-img'
+  image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
     
 
