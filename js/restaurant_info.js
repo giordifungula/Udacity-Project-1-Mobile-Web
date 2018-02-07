@@ -4,7 +4,7 @@ var map;
 /**
  * Initialize Google map, called from HTML.
  */
- window.initMap = () => {
+window.initMap = () => {
   fetchRestaurantFromURL((error, restaurant) => {
     if (error) { // Got an error!
       console.error(error);
@@ -23,7 +23,7 @@ var map;
 /**
  * Get current restaurant from page URL.
  */
-const fetchRestaurantFromURL = (callback) => {
+fetchRestaurantFromURL = (callback) => {
   if (self.restaurant) { // restaurant already fetched!
     callback(null, self.restaurant)
     return;
@@ -48,7 +48,7 @@ const fetchRestaurantFromURL = (callback) => {
 /**
  * Create restaurant HTML and add it to the webpage
  */
-const fillRestaurantHTML = (restaurant = self.restaurant) => {
+fillRestaurantHTML = (restaurant = self.restaurant) => {
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
 
@@ -56,10 +56,10 @@ const fillRestaurantHTML = (restaurant = self.restaurant) => {
   address.innerHTML = restaurant.address;
 
   const image = document.getElementById('restaurant-img');
-    image.alt.innerHTML = 'Restuarant Image of ' + restaurant.name;
+  
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-    
+  image.alt = "Restuarant Image of " + restaurant.name; // I have added the alt tag however not appearing 
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -75,7 +75,7 @@ const fillRestaurantHTML = (restaurant = self.restaurant) => {
 /**
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
-const fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
+fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
     const row = document.createElement('tr');
@@ -95,9 +95,9 @@ const fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hour
 /**
  * Create all reviews HTML and add them to the webpage.
  */
-const fillReviewsHTML = (reviews = self.restaurant.reviews) => {
+fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h3');
+  const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
 
@@ -117,7 +117,7 @@ const fillReviewsHTML = (reviews = self.restaurant.reviews) => {
 /**
  * Create review HTML and add it to the webpage.
  */
-const createReviewHTML = (review) => {
+createReviewHTML = (review) => {
   const li = document.createElement('li');
   const name = document.createElement('p');
   name.innerHTML = review.name;
@@ -141,7 +141,7 @@ const createReviewHTML = (review) => {
 /**
  * Add restaurant name to the breadcrumb navigation menu
  */
-const fillBreadcrumb = (restaurant=self.restaurant) => {
+fillBreadcrumb = (restaurant=self.restaurant) => {
   const breadcrumb = document.getElementById('breadcrumb');
   const li = document.createElement('li');
   li.innerHTML = restaurant.name;
@@ -151,7 +151,7 @@ const fillBreadcrumb = (restaurant=self.restaurant) => {
 /**
  * Get a parameter by name from page URL.
  */
-const getParameterByName = (name, url) => {
+getParameterByName = (name, url) => {
   if (!url)
     url = window.location.href;
   name = name.replace(/[\[\]]/g, '\\$&');
