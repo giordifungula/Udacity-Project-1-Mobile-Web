@@ -1,7 +1,4 @@
-self.addEventListener('install', function(event) {
-   
-  // Perform install steps
-    var CACHE_NAME = 'my-site-cache-v1';
+var CACHE_NAME = 'my-site-cache-v1';
     var urlsToCache = [
         '/img/1.jpg',
         '/img/1.jpg',
@@ -22,6 +19,11 @@ self.addEventListener('install', function(event) {
   '/css/styles.css',
   '/data/restaurants.json'
 ];
+
+self.addEventListener('install', function(event) {
+   
+  // Perform install steps
+    
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(function(cache) {
