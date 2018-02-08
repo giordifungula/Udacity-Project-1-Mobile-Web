@@ -149,6 +149,7 @@ nav h1 a {
   #restaurants-list  {
     display: block;
   }
+  
 }
 
 #restaurants-list li {
@@ -219,7 +220,7 @@ nav h1 a {
 .inside #footer {
   bottom: 0;
   position: absolute;
-  width: 46.5%;
+  width: 83%;
 }
 #restaurant-name {
   color: #f18200;
@@ -307,6 +308,7 @@ nav h1 a {
   #restaurant-container, #reviews-container {
     width: 100%;
   }
+  
    
 }
 @media (min-width: 600px){
@@ -327,6 +329,10 @@ nav h1 a {
   .inside #map-container {
     position: fixed;
   }
+  .inside #footer {
+    width: 50%;
+  }
+  
   
 }
 
