@@ -11,8 +11,6 @@ body {
 	background-color: #fdfdfd;
 	margin: 0;
   position:relative;
-  
-  
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -77,7 +75,7 @@ nav h1 a {
     list-style: none;
     background-color: #eee;
     font-size: 17px;
-    margin: 0;
+    
     width: calc(100% - 80px);
 }
 
@@ -146,9 +144,10 @@ nav h1 a {
   /*
   
     */
-    display: grid;
-  grid-template-columns: auto auto auto;
-    grid-gap: 2px;
+    display: flex;
+    flex-wrap: wrap;
+
+  
 }
 @media (max-width: 600px) {
   #restaurants-list  {
@@ -326,10 +325,11 @@ nav h1 a {
   }
   #breadcrumb {
       width: calc(50% - 80px);
+      margin-top: 3.2rem;
   }
   #restaurant-container{
-      position: relative;
-      top: 0;
+      
+      margin-top: 8rem;
   }
   .inside #map-container {
     position: fixed;
@@ -349,13 +349,29 @@ nav h1 a {
   #neighborhoods-select {
       width: 100%;
       position: relative;
-      left: 121px;
+      left: 0;
+      overflow: hidden;
   }
   #cuisines-select {
       width: 100%;
       position: relative;
-      left: 120px;
+      left: 0;
+      overflow: hidden;
   }
+}
+@media (max-width: 320px) {
+  #restaurants-list li {
+    margin: -29px;
+    overflow: hidden;
+  }
+  
+  #cuisines-select {
+    width: 42%;
+  }
+  #neighborhoods-select {
+    width: 40%;
+  }
+
 }
 @media (max-width: 760px) {
   #restaurant-name {
@@ -365,6 +381,26 @@ nav h1 a {
 }
 @media (min-width: 700px) {
   #restaurants-list li {
-    width: 70%;
+    
+  }
+  #reviews-list {
+    width: 92%;
+  }
+  @media (min-width: 900px) {
+    #restaurants-list {
+      display: grid;
+      /*
+      grid-template-columns: auto auto auto;
+      grid-gap: 1px;
+      */
+      grid-template-columns: auto auto auto;
+      grid-gap: 1px;
+      overflow: hidden;
+      max-width: 100%;
+      
+    }
+    #restaurants-list li {
+      margin: 4px;
+    }
   }
 }
