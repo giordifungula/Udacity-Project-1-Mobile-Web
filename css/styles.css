@@ -383,17 +383,21 @@ nav h1 a {
   #restaurants-list li {
     
   }
+    .filter-options select {
+        width: 166px;
+    }
+    
   #reviews-list {
     width: 92%;
   }
-  @media (min-width: 900px) {
+  @media (min-width: 1000px) {
     #restaurants-list {
       display: grid;
       /*
       grid-template-columns: auto auto auto;
       grid-gap: 1px;
       */
-      grid-template-columns: auto auto auto;
+      grid-template-columns: auto auto auto ;
       grid-gap: 1px;
       overflow: hidden;
       max-width: 100%;
@@ -403,4 +407,21 @@ nav h1 a {
       margin: 4px;
     }
   }
+    @media (min-width: 1000px) {
+        #restaurants-list {
+            grid-template-columns: auto auto auto auto auto ;
+        }
+    }
+    
+    @media (min-width: 1850px) {
+        #restaurants-list {
+            grid-template-columns: auto auto auto auto auto auto auto ;
+        }
+    }
+    @media (min-width: 2000px) {
+        #restaurants-list {
+            grid-template-columns: auto auto auto auto auto auto auto auto auto auto ;
+        }
+        
+    }
 }
