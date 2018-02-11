@@ -343,6 +343,12 @@ nav h1 a {
   .inside #footer {
     width: 50%;
   }
+    #restaurants-list  {
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-gap: 2px;
+        width: 100%;
+  }
   
   
 }
