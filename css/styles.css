@@ -11,6 +11,10 @@ body {
 	background-color: #fdfdfd;
 	margin: 0;
   position:relative;
+	
+	/* may need to come back here to include display: grid to double check if its needed in body tag */
+	
+	
 }
 ul, li {
 	font-family: Arial, Helvetica, sans-serif;
@@ -141,24 +145,24 @@ nav h1 a {
   margin: 0;
   padding: 30px 15px 60px;
   text-align: center;
-  /*
-  display: flex;
-    flex-wrap: wrap;
-    */
-
-    
-    display: grid;
-  grid-column-gap: 50px;
+ 	display: grid;
+  grid-column-gap: 5px;
+grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /*
+   
   grid-template-columns: auto auto ;
+	*/
   
   padding: 10px;
 
   
 }
 @media (max-width: 600px) {
+	/*
   #restaurants-list  {
-    display: block;
+    grid-template-columns: auto auto;
   }
+	*/
   
 }
 
@@ -180,6 +184,7 @@ nav h1 a {
   max-width: 100%;
   min-height: 248px;
   min-width: 100%;
+	
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -323,7 +328,7 @@ nav h1 a {
 }
 @media (min-width: 600px){
   .inside #map-container {
-      width: 50%;
+      width: 45%;
       height: 87%;
   }
   #restaurant-container, #reviews-container {
@@ -344,10 +349,13 @@ nav h1 a {
     width: 50%;
   }
     #restaurants-list  {
+		
+		/*
     display: grid;
     grid-template-columns: auto auto ;
     grid-gap: 2px;
         width: 100%;
+		*/
   }
   
   
@@ -385,17 +393,23 @@ nav h1 a {
   }
 
 }
-@media (max-width: 760px) {
+@media (max-width: 768px) and (min-width: 600px) {
   #restaurant-name {
     font-size: 18px;
   }
+	#restaurants-list  {
+		grid-template-columns: auto auto;
+	}
   
 }
 @media (min-width: 700px) {
   #restaurants-list  {
+	  /*
     display: grid;
     grid-template-columns: auto auto ;
     grid-gap: 1px;
+	  */
+	  
   }
     .filter-options select {
         width: 166px;
@@ -406,8 +420,10 @@ nav h1 a {
   }
   @media (min-width: 800px) {
     #restaurants-list {
+		/*
       grid-template-columns: auto auto auto ;
       grid-gap: 1px;
+		*/
       
       /*
       display: grid;
@@ -427,11 +443,12 @@ nav h1 a {
     }
   }
     
-    @media (min-width: 1000px) {
+    @media (min-width: 1000px) and (max-width: 1300px){
         #restaurants-list {
-            grid-template-columns: auto auto auto   ;
+            grid-template-columns: auto auto auto ;
         }
     }
+	/*
      @media (min-width: 1200px) {
         #restaurants-list {
             grid-template-columns: auto auto auto auto ;
